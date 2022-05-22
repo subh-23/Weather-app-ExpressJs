@@ -12,7 +12,7 @@ route.get('/', (req, res) => {
 })
 route.post('/', async (req, res) => {
     const city = req.body.city;
-    const url_api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=f5ebf10c947c21684408648cda9a5363`;
+    const url_api = `${process.env.API_ID}=${city}&appid=${process.env.API_KEY}`;
     try {
         await fetch(url_api)
             .then(res => res.json())
