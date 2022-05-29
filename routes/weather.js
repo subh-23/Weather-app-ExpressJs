@@ -14,21 +14,19 @@ route.post('/', async (req, res) => {
     const city = req.body.city;
     const url_api = `${process.env.API_ID}=${city}&appid=${process.env.API_KEY}`;
     try {
-        await fetch(url_api)
-            .then(res => res.json())
-            .then(data => {
-                if (data.message === 'city not found') {
+       const news= await fetch(url_api)
+                if (news.message === 'city not found') {
                     res.render('index', {
-                        city: data.message,
+                        city: news.message,
                         des: null,
                         icon: null,
                         temp: null
                     })
                 } else {
-                    const city = data.name;
-                    const des = data.weather[0].description;
-                    const icon = data.weather[0].icon;
-                    const temp = data.main.temp;
+                    const city = news.name;
+                    const des = news.weather[0].description;
+                    const icon = news.weather[0].icon;
+                    const temp = news.main.temp;
                     res.render('index', {
                         city, des, icon, temp
                     });
