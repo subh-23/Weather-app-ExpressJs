@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -19,7 +22,8 @@
         </div>
 
         <form action="/" method="POST">
-            <input type="text" name="city" class="ghost-input" placeholder="Enter a city">
+            <input type="text" name="city" class="buttonn" style="text-align: center" placeholder="Enter a city">
+            <button type="submit" style=" padding-inline: 20px;">Go</button>
         </form>
 
         <div class="result">
@@ -48,6 +52,13 @@
                             <%}%>
         </div>
     </div>
+
+    <form action="/logout?_method=DELETE" class="buttonn" style="margin: 2rem 0; 
+     text-align: center" method="POST">
+        <button type="submit" style="text-align: center; padding-inline: 20px;">Log Out</button>
+        <!-- <button type="submit" class='btn btn-success pull-right'>Log Out</button> -->
+    </form>
+
 </body>
 
 </html>
